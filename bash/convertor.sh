@@ -1,5 +1,5 @@
 #! /bin/bash
-#####download videos from youtube using vlc####
+#####extract audio from utube using vlc, you may need the updated youtube.lua and place it in /usr/lib/vlc/lua/playlist####
 while read line
 do
 	name=$(echo $line|cut -d, -f1)

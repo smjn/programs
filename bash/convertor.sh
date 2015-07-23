@@ -1,4 +1,5 @@
 #! /bin/bash
+#####download videos from youtube using vlc####
 while read line
 do
 	name=$(echo $line|cut -d, -f1)

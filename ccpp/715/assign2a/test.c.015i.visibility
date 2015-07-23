@@ -1,0 +1,124 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: void h() void f() void g() int main()
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+callgraph:
+
+void h()/3 @0x2b18cbbdec60 (asm: _Z1hv) availability:available analyzed needed reachable body externally_visible finalized
+  called by: void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void f()/2 @0x2b18cbbdeb40 (asm: _Z1fv) availability:available analyzed needed reachable body externally_visible finalized
+  called by: int main()/0 (1.00 per call) int main()/0 (1.00 per call) int main()/0 (1.00 per call) void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void g()/1 @0x2b18cbbdea20 (asm: _Z1gv) availability:available analyzed needed reachable body externally_visible finalized
+  called by: int main()/0 (1.00 per call) (can throw external) 
+  calls: void h()/3 (1.00 per call) void f()/2 (1.00 per call) 
+  References: 
+  Refering this function: 
+int main()/0 @0x2b18cbbde900 (asm: main) availability:available analyzed needed reachable body externally_visible finalized
+  called by: 
+  calls: void f()/2 (1.00 per call) void f()/2 (1.00 per call) void f()/2 (1.00 per call) void g()/1 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+void h() ()
+{
+<bb 2>:
+  GIMPLE_NOP
+  return;
+
+}
+
+
+void f() ()
+{
+  int c;
+  int b;
+  int a;
+
+<bb 2>:
+  a = 10;
+  b = 10;
+  c = 10;
+  a = c;
+  return;
+
+}
+
+
+void g() ()
+{
+<bb 2>:
+  f ();
+  h ();
+  return;
+
+}
+
+
+int main() ()
+{
+  long int lcm;
+  long int gcd;
+  long int t;
+  long int y;
+  long int x;
+  long int b;
+  long int a;
+  int D.2730;
+  long int D.2729;
+  long int D.2728;
+  long int D.2727;
+  long int D.2726;
+  long int D.2725;
+  bool D.2724;
+
+<bb 2>:
+  a = x;
+  b = -1300900;
+  a = a + 1;
+  goto <bb 4>;
+
+<bb 3>:
+  t = b;
+  g ();
+  f ();
+  b = a / b;
+  a = t;
+
+<bb 4>:
+  D.2724 = b != 0;
+  if (D.2724 != 0)
+    goto <bb 3>;
+  else
+    goto <bb 5>;
+
+<bb 5>:
+  f ();
+  f ();
+  gcd = a;
+  D.2725 = x * y;
+  D.2726 = a - b;
+  lcm = D.2725 / D.2726;
+  D.2727 = a + b;
+  D.2728 = D.2727 + x;
+  D.2729 = D.2728 + y;
+  t = D.2729 + t;
+  D.2730 = 0;
+
+<L3>:
+  return D.2730;
+
+}
+
+

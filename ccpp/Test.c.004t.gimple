@@ -1,0 +1,10 @@
+main ()
+{
+  int D.2163;
+
+  printf ("Hello world!");
+  D.2163 = 0;
+  return D.2163;
+}
+
+

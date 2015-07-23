@@ -1,0 +1,77 @@
+void h() ()
+{
+  GIMPLE_NOP
+}
+
+
+void f() ()
+{
+  int a;
+  int b;
+  int c;
+
+  a = 10;
+  b = 10;
+  c = 10;
+  a = c;
+}
+
+
+void g() ()
+{
+  f ();
+  h ();
+}
+
+
+int main() ()
+{
+  bool D.2724;
+  long int D.2725;
+  long int D.2726;
+  long int D.2727;
+  long int D.2728;
+  long int D.2729;
+  int D.2730;
+
+  {
+    long int a;
+    long int b;
+    long int x;
+    long int y;
+    long int t;
+    long int gcd;
+    long int lcm;
+
+    a = x;
+    b = -1300900;
+    a = a + 1;
+    goto <D.2722>;
+    <D.2723>:
+    t = b;
+    g ();
+    f ();
+    b = a / b;
+    a = t;
+    <D.2722>:
+    D.2724 = b != 0;
+    if (D.2724 != 0) goto <D.2723>; else goto <D.2721>;
+    <D.2721>:
+    f ();
+    f ();
+    gcd = a;
+    D.2725 = x * y;
+    D.2726 = a - b;
+    lcm = D.2725 / D.2726;
+    D.2727 = a + b;
+    D.2728 = D.2727 + x;
+    D.2729 = D.2728 + y;
+    t = D.2729 + t;
+    D.2730 = 0;
+    return D.2730;
+  }
+  D.2730 = 0;
+  return D.2730;
+}
+
+

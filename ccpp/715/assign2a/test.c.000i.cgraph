@@ -1,0 +1,163 @@
+Initial entry points: void h() void f() void g() int main()
+Unit entry points: void h() void f() void g() int main()
+
+Initial callgraph:
+
+void h()/3 @0x2b18cbbdec60 (asm: _Z1hv) analyzed needed reachable body finalized
+  called by: void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void f()/2 @0x2b18cbbdeb40 (asm: _Z1fv) analyzed needed reachable body finalized
+  called by: int main()/0 (1.00 per call) int main()/0 (1.00 per call) int main()/0 (1.00 per call) void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void g()/1 @0x2b18cbbdea20 (asm: _Z1gv) analyzed needed reachable body finalized
+  called by: int main()/0 (1.00 per call) (can throw external) 
+  calls: void h()/3 (1.00 per call) void f()/2 (1.00 per call) 
+  References: 
+  Refering this function: 
+int main()/0 @0x2b18cbbde900 (asm: main) analyzed needed reachable body finalized
+  called by: 
+  calls: void f()/2 (1.00 per call) void f()/2 (1.00 per call) void f()/2 (1.00 per call) void g()/1 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+variable pool:
+
+
+Reclaiming functions:
+
+Reclaimed callgraph:
+
+void h()/3 @0x2b18cbbdec60 (asm: _Z1hv) analyzed needed reachable body finalized
+  called by: void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void f()/2 @0x2b18cbbdeb40 (asm: _Z1fv) analyzed needed reachable body finalized
+  called by: int main()/0 (1.00 per call) int main()/0 (1.00 per call) int main()/0 (1.00 per call) void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void g()/1 @0x2b18cbbdea20 (asm: _Z1gv) analyzed needed reachable body finalized
+  called by: int main()/0 (1.00 per call) (can throw external) 
+  calls: void h()/3 (1.00 per call) void f()/2 (1.00 per call) 
+  References: 
+  Refering this function: 
+int main()/0 @0x2b18cbbde900 (asm: main) analyzed needed reachable body finalized
+  called by: 
+  calls: void f()/2 (1.00 per call) void f()/2 (1.00 per call) void f()/2 (1.00 per call) void g()/1 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+variable pool:
+
+Initial entry points:
+Unit entry points:
+
+Initial callgraph:
+
+void h()/3 @0x2b18cbbdec60 (asm: _Z1hv) analyzed needed reachable body finalized
+  called by: void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void f()/2 @0x2b18cbbdeb40 (asm: _Z1fv) analyzed needed reachable body finalized
+  called by: int main()/0 (1.00 per call) int main()/0 (1.00 per call) int main()/0 (1.00 per call) void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void g()/1 @0x2b18cbbdea20 (asm: _Z1gv) analyzed needed reachable body finalized
+  called by: int main()/0 (1.00 per call) (can throw external) 
+  calls: void h()/3 (1.00 per call) void f()/2 (1.00 per call) 
+  References: 
+  Refering this function: 
+int main()/0 @0x2b18cbbde900 (asm: main) analyzed needed reachable body finalized
+  called by: 
+  calls: void f()/2 (1.00 per call) void f()/2 (1.00 per call) void f()/2 (1.00 per call) void g()/1 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+variable pool:
+
+
+Reclaiming functions:
+
+Reclaimed callgraph:
+
+void h()/3 @0x2b18cbbdec60 (asm: _Z1hv) analyzed needed reachable body finalized
+  called by: void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void f()/2 @0x2b18cbbdeb40 (asm: _Z1fv) analyzed needed reachable body finalized
+  called by: int main()/0 (1.00 per call) int main()/0 (1.00 per call) int main()/0 (1.00 per call) void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void g()/1 @0x2b18cbbdea20 (asm: _Z1gv) analyzed needed reachable body finalized
+  called by: int main()/0 (1.00 per call) (can throw external) 
+  calls: void h()/3 (1.00 per call) void f()/2 (1.00 per call) 
+  References: 
+  Refering this function: 
+int main()/0 @0x2b18cbbde900 (asm: main) analyzed needed reachable body finalized
+  called by: 
+  calls: void f()/2 (1.00 per call) void f()/2 (1.00 per call) void f()/2 (1.00 per call) void g()/1 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+variable pool:
+
+
+Reclaiming functions:
+Optimized callgraph:
+
+void h()/3 @0x2b18cbbdec60 (asm: _Z1hv) availability:available analyzed needed reachable body externally_visible finalized
+  called by: void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void f()/2 @0x2b18cbbdeb40 (asm: _Z1fv) availability:available analyzed needed reachable body externally_visible finalized
+  called by: int main()/0 (1.00 per call) int main()/0 (1.00 per call) int main()/0 (1.00 per call) void g()/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+void g()/1 @0x2b18cbbdea20 (asm: _Z1gv) availability:available analyzed needed reachable body externally_visible finalized
+  called by: int main()/0 (1.00 per call) (can throw external) 
+  calls: void h()/3 (1.00 per call) void f()/2 (1.00 per call) 
+  References: 
+  Refering this function: 
+int main()/0 @0x2b18cbbde900 (asm: main) availability:available analyzed needed reachable body externally_visible finalized
+  called by: 
+  calls: void f()/2 (1.00 per call) void f()/2 (1.00 per call) void f()/2 (1.00 per call) void g()/1 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+variable pool:
+
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+
+Final callgraph:
+
+void h()/3 @0x2b18cbbdec60 (asm: _Z1hv) availability:available analyzed needed reachable externally_visible finalized asm_written
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+void f()/2 @0x2b18cbbdeb40 (asm: _Z1fv) availability:available analyzed needed reachable externally_visible finalized asm_written
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+void g()/1 @0x2b18cbbdea20 (asm: _Z1gv) availability:available analyzed needed reachable externally_visible finalized asm_written
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+int main()/0 @0x2b18cbbde900 (asm: main) availability:available analyzed needed reachable externally_visible finalized asm_written
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+

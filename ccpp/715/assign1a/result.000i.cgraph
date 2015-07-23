@@ -1,0 +1,104 @@
+Creating file test1.o with sub id 0x50e9e4922499222b
+Before merging:
+callgraph:
+
+main/4 @0x2ae1159cbb40 (asm: main) analyzed externally_visible prevailing_def finalized only_called_at_startup
+  called by: 
+  calls: callme/3 (1.00 per call) (can throw external) 
+  References:  var:p (write)
+  Refering this function: 
+callme/3 @0x2ae1159cba20 (asm: _Z6callmei) analyzed externally_visible prevailing_def_ironly finalized
+  called by: main/4 (1.00 per call) (can throw external) callthe/1 (1.00 per call) (can throw external) 
+  calls: callwe/2 (1.00 per call) (can throw external) 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+callwe/2 @0x2ae1159cb900 (asm: _Z6callwei) analyzed externally_visible prevailing_def_ironly finalized
+  called by: callme/3 (1.00 per call) (can throw external) 
+  calls: callthe/1 (1.00 per call) (can throw external) 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+callthe/1 @0x2ae1159cb7e0 (asm: _Z7callthei) analyzed externally_visible prevailing_def_ironly finalized
+  called by: callwe/2 (1.00 per call) (can throw external) 
+  calls: callme/3 (1.00 per call) (can throw external) 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+calle/0 @0x2ae1159cb6c0 (asm: _Z5callei) analyzed externally_visible prevailing_def_ironly finalized
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+
+q: availability:not-ready (asm: q) needed analyzed finalized externally_visible prevailing_def_ironly
+  References: 
+  Refering this var:  fn:callthe/1 (write) fn:callwe/2 (write) fn:callme/3 (write)
+p: availability:not-ready (asm: p) needed analyzed finalized externally_visible prevailing_def_ironly
+  References: 
+  Refering this var:  fn:callthe/1 (read) fn:callwe/2 (read) fn:callme/3 (read) fn:main/4 (write)
+
+Reclaiming functions:
+Optimized callgraph:
+
+main/4 @0x2ae1159cbb40 (asm: main) availability:overwritable analyzed needed reachable body externally_visible prevailing_def finalized only_called_at_startup
+  called by: 
+  calls: callme/3 (1.00 per call) (can throw external) 
+  References:  var:p (write)
+  Refering this function: 
+callme/3 @0x2ae1159cba20 (asm: _Z6callmei) availability:local analyzed reachable body local prevailing_def_ironly finalized
+  called by: main/4 (1.00 per call) (can throw external) callthe/1 (1.00 per call) (can throw external) 
+  calls: callwe/2 (1.00 per call) (can throw external) 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+callwe/2 @0x2ae1159cb900 (asm: _Z6callwei) availability:local analyzed reachable body local prevailing_def_ironly finalized
+  called by: callme/3 (1.00 per call) (can throw external) 
+  calls: callthe/1 (1.00 per call) (can throw external) 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+callthe/1 @0x2ae1159cb7e0 (asm: _Z7callthei) availability:local analyzed reachable body local prevailing_def_ironly finalized
+  called by: callwe/2 (1.00 per call) (can throw external) 
+  calls: callme/3 (1.00 per call) (can throw external) 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+variable pool:
+
+q: availability:available (asm: q) needed analyzed finalized prevailing_def_ironly
+  References: 
+  Refering this var:  fn:callthe/1 (write) fn:callwe/2 (write) fn:callme/3 (write)
+p: availability:available (asm: p) needed analyzed finalized prevailing_def_ironly
+  References: 
+  Refering this var:  fn:callthe/1 (read) fn:callwe/2 (read) fn:callme/3 (read) fn:main/4 (write)
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+
+Final callgraph:
+
+main/4 @0x2ae1159cbb40 (asm: main) availability:overwritable analyzed needed reachable externally_visible prevailing_def finalized asm_written only_called_at_startup
+  called by: 
+  calls: 
+  References:  var:p (write)
+  Refering this function: 
+callme/3 @0x2ae1159cba20 (asm: _Z6callmei) availability:local analyzed reachable local prevailing_def_ironly finalized asm_written
+  called by: 
+  calls: 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+callwe/2 @0x2ae1159cb900 (asm: _Z6callwei) availability:local analyzed reachable local prevailing_def_ironly finalized asm_written
+  called by: 
+  calls: 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+callthe/1 @0x2ae1159cb7e0 (asm: _Z7callthei) availability:local analyzed reachable local prevailing_def_ironly finalized asm_written
+  called by: 
+  calls: 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+variable pool:
+
+q: availability:available (asm: q) (asm written) needed analyzed finalized prevailing_def_ironly
+  References: 
+  Refering this var:  fn:callwe/2 (write) fn:callme/3 (write) fn:callthe/1 (write)
+p: availability:available (asm: p) (asm written) needed analyzed finalized prevailing_def_ironly
+  References: 
+  Refering this var:  fn:callwe/2 (read) fn:callme/3 (read) fn:main/4 (write) fn:callthe/1 (read)

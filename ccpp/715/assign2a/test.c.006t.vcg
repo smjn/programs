@@ -1,0 +1,52 @@
+graph: { title: "void h()"
+node: { title: "ENTRY" label: "ENTRY" }
+node: { title: "EXIT" label: "EXIT" }
+edge: { sourcename: "ENTRY" targetname: "2" linestyle: solid priority: 100 }
+
+node: { title: "2" label: "#2\ngimple_nop (-1)\ngimple_return (50)"}
+edge: { sourcename: "2" targetname: "EXIT" priority: 100 linestyle: solid }
+}
+
+graph: { title: "void f()"
+node: { title: "ENTRY" label: "ENTRY" }
+node: { title: "EXIT" label: "EXIT" }
+edge: { sourcename: "ENTRY" targetname: "2" linestyle: solid priority: 100 }
+
+node: { title: "2" label: "#2\ngimple_assign (44)\ngimple_return (48)"}
+edge: { sourcename: "2" targetname: "EXIT" priority: 100 linestyle: solid }
+}
+
+graph: { title: "void g()"
+node: { title: "ENTRY" label: "ENTRY" }
+node: { title: "EXIT" label: "EXIT" }
+edge: { sourcename: "ENTRY" targetname: "2" linestyle: solid priority: 100 }
+
+node: { title: "2" label: "#2\ngimple_call (38)\ngimple_return (40)"}
+edge: { sourcename: "2" targetname: "EXIT" priority: 100 linestyle: solid }
+}
+
+graph: { title: "int main()"
+node: { title: "ENTRY" label: "ENTRY" }
+node: { title: "EXIT" label: "EXIT" }
+edge: { sourcename: "ENTRY" targetname: "2" linestyle: solid priority: 100 }
+
+node: { title: "2" label: "#2\ngimple_assign (17)\ngimple_assign (20)"}
+edge: { sourcename: "2" targetname: "4" priority: 100 linestyle: solid }
+
+node: { title: "3" label: "#3\ngimple_assign (22)\ngimple_assign (26)"}
+edge: { sourcename: "3" targetname: "4" priority: 100 linestyle: solid }
+
+node: { title: "4" label: "#4\ngimple_assign (21)\ngimple_cond (21)"}
+edge: { sourcename: "4" targetname: "3" priority: 100 linestyle: solid }
+edge: { sourcename: "4" targetname: "5" priority: 100 linestyle: solid }
+
+node: { title: "5" label: "#5\ngimple_call (28)\ngimple_assign (34)"}
+edge: { sourcename: "5" targetname: "7" priority: 100 linestyle: solid }
+
+node: { title: "6" label: "#6\ngimple_assign (35)\ngimple_assign (35)"}
+edge: { sourcename: "6" targetname: "7" priority: 100 linestyle: solid }
+
+node: { title: "7" label: "#7\ngimple_label (-1)\ngimple_return (-1)"}
+edge: { sourcename: "7" targetname: "EXIT" priority: 100 linestyle: solid }
+}
+

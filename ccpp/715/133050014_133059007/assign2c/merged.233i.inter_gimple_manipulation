@@ -1,0 +1,102 @@
+[FUNCTION:] h, [SIZE:] 2
+[FUNCTION:] g, [SIZE:] 10
+[FUNCTION:] main, [SIZE:] 50
+[FUNCTION:] f, [SIZE:] 7
+
+Total statements: 50
+f ()
+{
+  int c;
+  int b;
+  int a;
+
+<bb 2>:
+  a_1 = 10;
+  b_2 = 10;
+  c_3 = 10;
+  a_4 = c_3;
+  a_5 = 78;
+  b_6 = 56;
+  return;
+
+}
+
+
+main ()
+{
+  long int lcm;
+  long int gcd;
+  long int t;
+  long int y;
+  long int x;
+  long int b;
+  long int a;
+  int D.2374;
+  long int D.2373;
+  long int D.2372;
+  long int D.2371;
+  long int D.2370;
+  long int D.2369;
+  bool D.2368;
+
+<bb 2>:
+  a_5 = x_4(D);
+  b_6 = -1300900;
+  a_7 = a_5 + 1;
+  goto <bb 4>;
+
+<bb 3>:
+  t_10 = b_2;
+  g (1);
+  f ();
+  b_11 = a_1 / b_2;
+  a_12 = t_10;
+
+<bb 4>:
+  # a_1 = PHI <a_7(2), a_12(3)>
+  # b_2 = PHI <b_6(2), b_11(3)>
+  # t_3 = PHI <t_8(D)(2), t_10(3)>
+  D.2368_9 = b_2 != 0;
+  if (D.2368_9 != 0)
+    goto <bb 3>;
+  else
+    goto <bb 5>;
+
+<bb 5>:
+  f ();
+  f ();
+  gcd_13 = a_1;
+  D.2369_15 = x_4(D) * y_14(D);
+  D.2370_16 = a_1 - b_2;
+  lcm_17 = D.2369_15 / D.2370_16;
+  D.2371_18 = a_1 + b_2;
+  D.2372_19 = D.2371_18 + x_4(D);
+  D.2373_20 = D.2372_19 + y_14(D);
+  t_21 = D.2373_20 + t_3;
+  D.2374_22 = 0;
+
+<L0>:
+  return D.2374_22;
+
+}
+
+
+g (int a)
+{
+<bb 2>:
+  f ();
+  h ();
+  return;
+
+}
+
+
+h ()
+{
+<bb 2>:
+  GIMPLE_NOP
+  return;
+
+}
+
+

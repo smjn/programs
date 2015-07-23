@@ -1,0 +1,94 @@
+
+;; Function int main() (null)
+;; enabled by -tree-original
+
+
+{
+  long int a;
+  long int b;
+  long int x;
+  long int y;
+  long int t;
+  long int gcd;
+  long int lcm;
+
+    long int a;
+    long int b;
+    long int x;
+    long int y;
+    long int t;
+    long int gcd;
+    long int lcm;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (a = x) >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (b = -1300900) >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) a++  >>>>>;
+  <<< Unknown tree: while_stmt
+  b != 0
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (t = b) >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  g () >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  f () >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (b = a / b) >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (a = t) >>>>>; >>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  f () >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  f () >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (gcd = a) >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (lcm = (x * y) / (a - b)) >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (t = (((a + b) + x) + y) + t) >>>>>;
+  return <retval> = 0;
+}
+return <retval> = 0;
+
+
+
+;; Function void g() (null)
+;; enabled by -tree-original
+
+<<cleanup_point <<< Unknown tree: expr_stmt
+  f () >>>>>;
+<<cleanup_point <<< Unknown tree: expr_stmt
+  h () >>>>>;
+
+
+
+;; Function void f() (null)
+;; enabled by -tree-original
+
+{
+  int a;
+  int b;
+  int c;
+
+    int a;
+    int b;
+    int c;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (a = 10) >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (b = 10) >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (c = 10) >>>>>;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (a = c) >>>>>;
+}
+
+
+
+;; Function void h() (null)
+;; enabled by -tree-original
+
+
+
+

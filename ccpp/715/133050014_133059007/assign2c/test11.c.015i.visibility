@@ -1,0 +1,36 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: f()
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+callgraph:
+
+f()/0 @0x2b41cfdb86c0 (asm: _Z1fv) availability:available analyzed reachable body externally_visible finalized
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+f() ()
+{
+  int c;
+  int b;
+  int a;
+
+<bb 2>:
+  a = 10;
+  b = 10;
+  c = 10;
+  a = c;
+  a = 78;
+  b = 56;
+  return;
+
+}
+
+

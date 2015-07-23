@@ -1,0 +1,27 @@
+
+;; Function main (main, funcdef_no=0, decl_uid=2362, cgraph_uid=4)
+
+main ()
+{
+  int * c;
+  int b;
+  int a;
+  int D.2373;
+
+<bb 2>:
+  p = &b;
+  callme (a_1(D));
+
+<bb 3>:
+  D.2373_2 = 0;
+  b ={v} {CLOBBER};
+
+<L0>:
+  return D.2373_2;
+
+<L1>:
+  resx 1
+
+}
+
+

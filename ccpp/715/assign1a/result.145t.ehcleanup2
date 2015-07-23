@@ -1,0 +1,41 @@
+
+;; Function main (main, funcdef_no=0, decl_uid=2362, cgraph_uid=4)
+
+Before removal of unreachable regions:
+Eh tree:
+   2 must_not_throw
+   1 cleanup land:{1,<L1>}
+Reachable regions: n_bits = 3, set = {1 }
+Reachable landing pads: n_bits = 2, set = {1 }
+Removing unreachable region 2
+
+
+After removal of unreachable regions:
+Eh tree:
+   1 cleanup land:{1,<L1>}
+
+
+main ()
+{
+  int * c;
+  int b;
+  int a;
+  int D.2373;
+
+<bb 2>:
+  p = &b;
+  callme (a_1(D));
+
+<bb 3>:
+  D.2373_2 = 0;
+  b ={v} {CLOBBER};
+
+<L0>:
+  return D.2373_2;
+
+<L1>:
+  resx 1
+
+}
+
+

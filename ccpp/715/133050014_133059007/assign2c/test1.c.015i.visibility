@@ -1,0 +1,108 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: h() g(int) main
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+callgraph:
+
+f()/3 @0x2afa59fc5c60 (asm: _Z1fv) availability:not_available reachable
+  called by: main/0 (1.00 per call) (can throw external) main/0 (1.00 per call) (can throw external) main/0 (1.00 per call) (can throw external) g(int)/1 (1.00 per call) (can throw external) 
+  calls: 
+  References: 
+  Refering this function: 
+h()/2 @0x2afa59fc5b40 (asm: _Z1hv) availability:available analyzed reachable body externally_visible finalized
+  called by: g(int)/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+g(int)/1 @0x2afa59fc5a20 (asm: _Z1gi) availability:available analyzed reachable body externally_visible finalized
+  called by: main/0 (1.00 per call) (can throw external) 
+  calls: h()/2 (1.00 per call) f()/3 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+main/0 @0x2afa59fc5900 (asm: main) availability:available analyzed reachable body externally_visible finalized
+  called by: 
+  calls: f()/3 (1.00 per call) (can throw external) f()/3 (1.00 per call) (can throw external) f()/3 (1.00 per call) (can throw external) g(int)/1 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+h() ()
+{
+<bb 2>:
+  GIMPLE_NOP
+  return;
+
+}
+
+
+g(int) (int a)
+{
+<bb 2>:
+  f ();
+  h ();
+  return;
+
+}
+
+
+main ()
+{
+  long int lcm;
+  long int gcd;
+  long int t;
+  long int y;
+  long int x;
+  long int b;
+  long int a;
+  int D.2727;
+  long int D.2726;
+  long int D.2725;
+  long int D.2724;
+  long int D.2723;
+  long int D.2722;
+  bool D.2721;
+
+<bb 2>:
+  a = x;
+  b = -1300900;
+  a = a + 1;
+  goto <bb 4>;
+
+<bb 3>:
+  t = b;
+  g (1);
+  f ();
+  b = a / b;
+  a = t;
+
+<bb 4>:
+  D.2721 = b != 0;
+  if (D.2721 != 0)
+    goto <bb 3>;
+  else
+    goto <bb 5>;
+
+<bb 5>:
+  f ();
+  f ();
+  gcd = a;
+  D.2722 = x * y;
+  D.2723 = a - b;
+  lcm = D.2722 / D.2723;
+  D.2724 = a + b;
+  D.2725 = D.2724 + x;
+  D.2726 = D.2725 + y;
+  t = D.2726 + t;
+  D.2727 = 0;
+
+<L3>:
+  return D.2727;
+
+}
+
+

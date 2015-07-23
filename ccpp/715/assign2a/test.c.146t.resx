@@ -1,0 +1,106 @@
+
+;; Function int main() (main, funcdef_no=0, decl_uid=2702, cgraph_uid=0)
+
+int main() ()
+{
+  long int lcm;
+  long int gcd;
+  long int t;
+  long int y;
+  long int x;
+  long int b;
+  long int a;
+  int D.2730;
+  long int D.2729;
+  long int D.2728;
+  long int D.2727;
+  long int D.2726;
+  long int D.2725;
+  bool D.2724;
+
+<bb 2>:
+  a_5 = x_4(D);
+  b_6 = -1300900;
+  a_7 = a_5 + 1;
+  goto <bb 4>;
+
+<bb 3>:
+  t_10 = b_2;
+  g ();
+  f ();
+  b_11 = a_1 / b_2;
+  a_12 = t_10;
+
+<bb 4>:
+  # a_1 = PHI <a_7(2), a_12(3)>
+  # b_2 = PHI <b_6(2), b_11(3)>
+  # t_3 = PHI <t_8(D)(2), t_10(3)>
+  D.2724_9 = b_2 != 0;
+  if (D.2724_9 != 0)
+    goto <bb 3>;
+  else
+    goto <bb 5>;
+
+<bb 5>:
+  f ();
+  f ();
+  gcd_13 = a_1;
+  D.2725_15 = x_4(D) * y_14(D);
+  D.2726_16 = a_1 - b_2;
+  lcm_17 = D.2725_15 / D.2726_16;
+  D.2727_18 = a_1 + b_2;
+  D.2728_19 = D.2727_18 + x_4(D);
+  D.2729_20 = D.2728_19 + y_14(D);
+  t_21 = D.2729_20 + t_3;
+  D.2730_22 = 0;
+
+<L3>:
+  return D.2730_22;
+
+}
+
+
+
+;; Function void g() (_Z1gv, funcdef_no=1, decl_uid=2699, cgraph_uid=1)
+
+void g() ()
+{
+<bb 2>:
+  f ();
+  h ();
+  return;
+
+}
+
+
+
+;; Function void f() (_Z1fv, funcdef_no=2, decl_uid=2700, cgraph_uid=2)
+
+void f() ()
+{
+  int c;
+  int b;
+  int a;
+
+<bb 2>:
+  a_1 = 10;
+  b_2 = 10;
+  c_3 = 10;
+  a_4 = c_3;
+  return;
+
+}
+
+
+
+;; Function void h() (_Z1hv, funcdef_no=3, decl_uid=2701, cgraph_uid=3)
+
+void h() ()
+{
+<bb 2>:
+  GIMPLE_NOP
+  return;
+
+}
+
+

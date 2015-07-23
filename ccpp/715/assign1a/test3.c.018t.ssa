@@ -1,0 +1,100 @@
+
+;; Function int main() (main, funcdef_no=0, decl_uid=2699, cgraph_uid=0)
+
+int main() ()
+{
+  int j;
+  int i;
+  int h;
+  int d;
+  int c;
+  int b;
+  int a;
+  int D.2731;
+  bool D.2729;
+  bool D.2721;
+  int h.3;
+  int h.2;
+  int h.1;
+  bool retval.0;
+
+<bb 2>:
+  scanf ("%d", &h);
+
+<bb 3>:
+  goto <bb 13>;
+
+<bb 4>:
+  h.3_11 = h;
+  if (h.3_11 != 0)
+    goto <bb 5>;
+  else
+    goto <bb 10>;
+
+<bb 5>:
+  goto <bb 9>;
+
+<bb 6>:
+  if (b_14(D) < c_15(D))
+    goto <bb 7>;
+  else
+    goto <bb 8>;
+
+<bb 7>:
+  d_16 = 100;
+  goto <bb 9>;
+
+<bb 8>:
+  d_17 = 50;
+
+<bb 9>:
+  # d_1 = PHI <d_2(5), d_16(7), d_17(8)>
+  D.2721_13 = a_12(D) <= 49;
+  if (D.2721_13 != 0)
+    goto <bb 6>;
+  else
+    goto <bb 13>;
+
+<bb 10>:
+  i_18 = 0;
+  goto <bb 12>;
+
+<bb 11>:
+  j_20 = j_4 + i_3;
+  i_21 = i_3 + 1;
+
+<bb 12>:
+  # i_3 = PHI <i_18(10), i_21(11)>
+  # j_4 = PHI <j_5(10), j_20(11)>
+  D.2729_19 = i_3 < d_2;
+  if (D.2729_19 != 0)
+    goto <bb 11>;
+  else
+    goto <bb 13>;
+
+<bb 13>:
+  # d_2 = PHI <d_6(D)(3), d_1(9), d_2(12)>
+  # j_5 = PHI <j_7(D)(3), j_5(9), j_4(12)>
+  h.1_8 = h;
+  retval.0_9 = h.1_8 != 0;
+  h.2_10 = h.1_8 - 1;
+  h = h.2_10;
+  if (retval.0_9 != 0)
+    goto <bb 4>;
+  else
+    goto <bb 14>;
+
+<bb 14>:
+  D.2731_22 = 0;
+  h ={v} {CLOBBER};
+
+<L16>:
+  return D.2731_22;
+
+<L17>:
+  h ={v} {CLOBBER};
+  resx 1
+
+}
+
+

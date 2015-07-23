@@ -1,0 +1,112 @@
+
+;; Function int main() (main, funcdef_no=0, decl_uid=2699, cgraph_uid=0)
+
+Dom(0): {0}
+Dom(1): {0,2,3,13,14,15,1}
+Dom(2): {0,2}
+Dom(3): {0,2,3}
+Dom(4): {0,2,3,4,13}
+Dom(5): {0,2,3,4,5,13}
+Dom(6): {0,2,3,4,5,6,9,13}
+Dom(7): {0,2,3,4,5,6,7,9,13}
+Dom(8): {0,2,3,4,5,6,8,9,13}
+Dom(9): {0,2,3,4,5,9,13}
+Dom(10): {0,2,3,4,10,13}
+Dom(11): {0,2,3,4,10,11,12,13}
+Dom(12): {0,2,3,4,10,12,13}
+Dom(13): {0,2,3,13}
+Dom(14): {0,2,3,13,14}
+Dom(15): {0,2,3,13,14,15}
+Dom(16): {0,2,16}
+int main() ()
+{
+  int j;
+  int i;
+  int h;
+  int d;
+  int c;
+  int b;
+  int a;
+  int D.2731;
+  bool D.2729;
+  bool D.2721;
+  int h.3;
+  int h.2;
+  int h.1;
+  bool retval.0;
+
+<bb 2>:
+  scanf ("%d", &h);
+
+<bb 3>:
+  goto <bb 13>;
+
+<bb 4>:
+  h.3 = h;
+  if (h.3 != 0)
+    goto <bb 5>;
+  else
+    goto <bb 10>;
+
+<bb 5>:
+  goto <bb 9>;
+
+<bb 6>:
+  if (b < c)
+    goto <bb 7>;
+  else
+    goto <bb 8>;
+
+<bb 7>:
+  d = 100;
+  goto <bb 9>;
+
+<bb 8>:
+  d = 50;
+
+<bb 9>:
+  D.2721 = a <= 49;
+  if (D.2721 != 0)
+    goto <bb 6>;
+  else
+    goto <bb 13>;
+
+<bb 10>:
+  i = 0;
+  goto <bb 12>;
+
+<bb 11>:
+  j = j + i;
+  i = i + 1;
+
+<bb 12>:
+  D.2729 = i < d;
+  if (D.2729 != 0)
+    goto <bb 11>;
+  else
+    goto <bb 13>;
+
+<bb 13>:
+  h.1 = h;
+  retval.0 = h.1 != 0;
+  h.2 = h.1 - 1;
+  h = h.2;
+  if (retval.0 != 0)
+    goto <bb 4>;
+  else
+    goto <bb 14>;
+
+<bb 14>:
+  D.2731 = 0;
+  h = {CLOBBER};
+
+<L16>:
+  return D.2731;
+
+<L17>:
+  h = {CLOBBER};
+  resx 1
+
+}
+
+

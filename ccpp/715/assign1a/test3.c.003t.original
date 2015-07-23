@@ -1,0 +1,57 @@
+
+;; Function int main() (null)
+;; enabled by -tree-original
+
+
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int h;
+  int i;
+  int j;
+
+    int a;
+    int b;
+    int c;
+    int d;
+    int h;
+    int i;
+    int j;
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) scanf ((const char *) "%d", &h) >>>>>;
+  <<< Unknown tree: while_stmt
+  <<cleanup_point h--  != 0>>
+  if (h != 0)
+    {
+      <<< Unknown tree: while_stmt
+  a <= 49
+  if (b < c)
+    {
+      <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (d = 100) >>>>>;
+    }
+  else
+    {
+      <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (d = 50) >>>>>;
+    } >>>;
+    }
+  else
+    {
+      <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (i = 0) >>>>>;
+      <<< Unknown tree: for_stmt
+  
+  i < d
+  <<cleanup_point (void) i++ >>
+  <<cleanup_point <<< Unknown tree: expr_stmt
+  (void) (j = j + i) >>>>>
+   >>>;
+    } >>>;
+  return <retval> = 0;
+}
+return <retval> = 0;
+
+

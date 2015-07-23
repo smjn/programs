@@ -1,0 +1,119 @@
+
+Analyzing function: f()/0
+
+Analyzing function body size: f()
+
+Inline summary for f()/0
+  self time:       2
+  global time:     0
+  self size:       3
+  global size:     0
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:2.000000, predicate:(true)
+    size:2.000000, time:0.000000, predicate:(not inlined)
+  calls:
+
+
+Reclaiming functions:
+Inline summary for f()/0
+  self time:       2
+  global time:     2
+  self size:       3
+  global size:     3
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:2.000000, predicate:(true)
+    size:2.000000, time:0.000000, predicate:(not inlined)
+  calls:
+
+
+Flattening functions:
+
+Deciding on inlining of small functions.  Starting with size 0.
+Enqueueing calls of f()/0.
+Unit growth for small function inlining: 3->3 (0%)
+
+Reclaiming functions:
+
+Inlined 0 calls, eliminated 0 functions
+
+Inline summary for f()/0
+  self time:       2
+  global time:     2
+  self size:       3
+  global size:     3
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:2.000000, predicate:(true)
+    size:2.000000, time:0.000000, predicate:(not inlined)
+  calls:
+
+
+Reclaiming functions:
+callgraph:
+
+f()/0 @0x2b41cfdb86c0 (asm: _Z1fv) availability:available analyzed needed reachable body externally_visible finalized
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+f() ()
+{
+  int c;
+  int b;
+  int a;
+
+<bb 2>:
+  a_1 = 10;
+  b_2 = 10;
+  c_3 = 10;
+  a_4 = c_3;
+  a_5 = 78;
+  b_6 = 56;
+  return;
+
+}
+
+
+
+;; Function f() (_Z1fv, funcdef_no=0, decl_uid=2184, cgraph_uid=0)
+
+f() ()
+{
+  int c;
+  int b;
+  int a;
+
+  # BLOCK 2
+  # PRED: ENTRY (fallthru)
+  a_1 = 10;
+  b_2 = 10;
+  c_3 = 10;
+  a_4 = c_3;
+  a_5 = 78;
+  b_6 = 56;
+  return;
+  # SUCC: EXIT
+
+}
+
+
+f() ()
+{
+  int c;
+  int b;
+  int a;
+
+<bb 2>:
+  a_1 = 10;
+  b_2 = 10;
+  c_3 = 10;
+  a_4 = c_3;
+  a_5 = 78;
+  b_6 = 56;
+  return;
+
+}
+
+

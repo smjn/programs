@@ -1,0 +1,88 @@
+Creating file /tmp/ccKiZmlG.o with sub id 0xb15df7b8b163aa17
+Creating file /tmp/ccEPduup.o with sub id 0xaa39476a60880870
+Before merging:
+callgraph:
+
+f/4 @0x2b292ed59b40 (asm: _Z1fv) analyzed externally_visible prevailing_def_ironly finalized
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+f/3 @0x2b292ed59a20 (asm: _Z1fv)
+  called by: main/2 (1.00 per call) (can throw external) main/2 (1.00 per call) (can throw external) main/2 (1.00 per call) (can throw external) g/1 (1.00 per call) (can throw external) 
+  calls: 
+  References: 
+  Refering this function: 
+main/2 @0x2b292ed59900 (asm: main) analyzed externally_visible prevailing_def finalized
+  called by: 
+  calls: f/3 (1.00 per call) (can throw external) f/3 (1.00 per call) (can throw external) f/3 (1.00 per call) (can throw external) g/1 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+g/1 @0x2b292ed597e0 (asm: _Z1gi) analyzed externally_visible prevailing_def_ironly finalized
+  called by: main/2 (1.00 per call) (can throw external) 
+  calls: h/0 (1.00 per call) f/3 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+h/0 @0x2b292ed596c0 (asm: _Z1hv) analyzed externally_visible prevailing_def_ironly finalized
+  called by: g/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+
+Replacing cgraph node f/3 by f/4 for symbol _Z1fv
+
+Reclaiming functions:
+Optimized callgraph:
+
+f/4 @0x2b292ed59b40 (asm: _Z1fv) availability:local analyzed reachable body local prevailing_def_ironly finalized
+  called by: g/1 (1.00 per call) (can throw external) main/2 (1.00 per call) (can throw external) main/2 (1.00 per call) (can throw external) main/2 (1.00 per call) (can throw external) 
+  calls: 
+  References: 
+  Refering this function: 
+main/2 @0x2b292ed59900 (asm: main) availability:available analyzed needed reachable body externally_visible prevailing_def finalized
+  called by: 
+  calls: f/4 (1.00 per call) (can throw external) f/4 (1.00 per call) (can throw external) f/4 (1.00 per call) (can throw external) g/1 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+g/1 @0x2b292ed597e0 (asm: _Z1gi) availability:local analyzed reachable body local prevailing_def_ironly finalized
+  called by: main/2 (1.00 per call) (can throw external) 
+  calls: h/0 (1.00 per call) f/4 (1.00 per call) (can throw external) 
+  References: 
+  Refering this function: 
+h/0 @0x2b292ed596c0 (asm: _Z1hv) availability:local analyzed reachable body local prevailing_def_ironly finalized
+  called by: g/1 (1.00 per call) 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+
+Final callgraph:
+
+f/4 @0x2b292ed59b40 (asm: _Z1fv) availability:local analyzed reachable local prevailing_def_ironly finalized asm_written
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+main/2 @0x2b292ed59900 (asm: main) availability:available analyzed needed reachable externally_visible prevailing_def finalized asm_written
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+g/1 @0x2b292ed597e0 (asm: _Z1gi) availability:local analyzed reachable local prevailing_def_ironly finalized asm_written
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+h/0 @0x2b292ed596c0 (asm: _Z1hv) availability:local analyzed reachable local prevailing_def_ironly finalized asm_written
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+

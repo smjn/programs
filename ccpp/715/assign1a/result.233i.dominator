@@ -1,0 +1,65 @@
+main ()
+{
+  int b;
+  int a;
+
+<bb 2>:
+  p = &b;
+  callme (a_1(D));
+  b ={v} {CLOBBER};
+  return 0;
+
+}
+
+
+callme (int a)
+{
+  int a.8;
+  int a.7;
+  int * p.6;
+
+<bb 2>:
+  p.6_2 = p;
+  a.7_3 = MEM[(int *)p.6_2 + 12B];
+  a = a.7_3;
+  q = &a;
+  callwe (a.7_3);
+  return;
+
+}
+
+
+callwe (int a)
+{
+  int a.5;
+  int a.4;
+  int * p.3;
+
+<bb 2>:
+  p.3_2 = p;
+  a.4_3 = MEM[(int *)p.3_2 + 12B];
+  a = a.4_3;
+  q = &a;
+  callthe (a.4_3);
+  return;
+
+}
+
+
+callthe (int a)
+{
+  int a.2;
+  int a.1;
+  int * p.0;
+
+<bb 2>:
+  p.0_2 = p;
+  a.1_3 = MEM[(int *)p.0_2 + 12B];
+  a = a.1_3;
+  q = &a;
+  callme (a.1_3);
+  return;
+
+}
+
+

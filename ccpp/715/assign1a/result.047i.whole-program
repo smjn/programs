@@ -1,0 +1,101 @@
+
+Marking local functions: callme callwe callthe calle
+
+
+Marking externally visible functions: main
+
+
+Marking externally visible variables:
+
+
+Needed variables: q p
+
+
+Reclaiming functions: calle
+callgraph:
+
+main/4 @0x2ae1159cbb40 (asm: main) availability:overwritable analyzed needed reachable body externally_visible prevailing_def finalized only_called_at_startup
+  called by: 
+  calls: callme/3 (1.00 per call) (can throw external) 
+  References:  var:p (write)
+  Refering this function: 
+callme/3 @0x2ae1159cba20 (asm: _Z6callmei) availability:local analyzed reachable body local prevailing_def_ironly finalized
+  called by: main/4 (1.00 per call) (can throw external) callthe/1 (1.00 per call) (can throw external) 
+  calls: callwe/2 (1.00 per call) (can throw external) 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+callwe/2 @0x2ae1159cb900 (asm: _Z6callwei) availability:local analyzed reachable body local prevailing_def_ironly finalized
+  called by: callme/3 (1.00 per call) (can throw external) 
+  calls: callthe/1 (1.00 per call) (can throw external) 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+callthe/1 @0x2ae1159cb7e0 (asm: _Z7callthei) availability:local analyzed reachable body local prevailing_def_ironly finalized
+  called by: callwe/2 (1.00 per call) (can throw external) 
+  calls: callme/3 (1.00 per call) (can throw external) 
+  References:  var:p (read) var:q (write)
+  Refering this function: 
+main ()
+{
+  int b;
+  int a;
+
+<bb 2>:
+  p = &b;
+  callme (a_1(D));
+  b ={v} {CLOBBER};
+  return 0;
+
+}
+
+
+callme (int a)
+{
+  int a.8;
+  int a.7;
+  int * p.6;
+
+<bb 2>:
+  p.6_2 = p;
+  a.7_3 = MEM[(int *)p.6_2 + 12B];
+  a = a.7_3;
+  q = &a;
+  callwe (a.7_3);
+  return;
+
+}
+
+
+callwe (int a)
+{
+  int a.5;
+  int a.4;
+  int * p.3;
+
+<bb 2>:
+  p.3_2 = p;
+  a.4_3 = MEM[(int *)p.3_2 + 12B];
+  a = a.4_3;
+  q = &a;
+  callthe (a.4_3);
+  return;
+
+}
+
+
+callthe (int a)
+{
+  int a.2;
+  int a.1;
+  int * p.0;
+
+<bb 2>:
+  p.0_2 = p;
+  a.1_3 = MEM[(int *)p.0_2 + 12B];
+  a = a.1_3;
+  q = &a;
+  callme (a.1_3);
+  return;
+
+}
+
+

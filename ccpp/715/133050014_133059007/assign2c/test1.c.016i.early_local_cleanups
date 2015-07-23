@@ -1,0 +1,77 @@
+
+Reclaiming functions:
+h() ()
+{
+<bb 2>:
+  GIMPLE_NOP
+  return;
+
+}
+
+
+g(int) (int a)
+{
+<bb 2>:
+  f ();
+  h ();
+  return;
+
+}
+
+
+main ()
+{
+  long int lcm;
+  long int gcd;
+  long int t;
+  long int y;
+  long int x;
+  long int b;
+  long int a;
+  int D.2727;
+  long int D.2726;
+  long int D.2725;
+  long int D.2724;
+  long int D.2723;
+  long int D.2722;
+  bool D.2721;
+
+<bb 2>:
+  a = x;
+  b = -1300900;
+  a = a + 1;
+  goto <bb 4>;
+
+<bb 3>:
+  t = b;
+  g (1);
+  f ();
+  b = a / b;
+  a = t;
+
+<bb 4>:
+  D.2721 = b != 0;
+  if (D.2721 != 0)
+    goto <bb 3>;
+  else
+    goto <bb 5>;
+
+<bb 5>:
+  f ();
+  f ();
+  gcd = a;
+  D.2722 = x * y;
+  D.2723 = a - b;
+  lcm = D.2722 / D.2723;
+  D.2724 = a + b;
+  D.2725 = D.2724 + x;
+  D.2726 = D.2725 + y;
+  t = D.2726 + t;
+  D.2727 = 0;
+
+<L3>:
+  return D.2727;
+
+}
+
+

@@ -1,0 +1,73 @@
+Initial entry points:
+Unit entry points:
+
+Initial callgraph:
+
+void f()/0 @0x2b41cfdb86c0 (asm: _Z1fv) analyzed reachable body finalized
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+
+
+Reclaiming functions:
+
+Reclaimed callgraph:
+
+void f()/0 @0x2b41cfdb86c0 (asm: _Z1fv) analyzed reachable body finalized
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+
+Initial entry points:
+Unit entry points:
+
+Initial callgraph:
+
+void f()/0 @0x2b41cfdb86c0 (asm: _Z1fv) analyzed reachable body finalized
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+
+
+Reclaiming functions:
+
+Reclaimed callgraph:
+
+void f()/0 @0x2b41cfdb86c0 (asm: _Z1fv) analyzed reachable body finalized
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+
+
+Reclaiming functions:
+Optimized callgraph:
+
+f()/0 @0x2b41cfdb86c0 (asm: _Z1fv) availability:available analyzed needed reachable body externally_visible finalized
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+
+Final callgraph:
+
+f()/0 @0x2b41cfdb86c0 (asm: _Z1fv) availability:available analyzed needed reachable externally_visible finalized asm_written
+  called by: 
+  calls: 
+  References: 
+  Refering this function: 
+variable pool:
+

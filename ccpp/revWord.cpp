@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//Reverse each word and capitalize the first character of it. Sentence is space separated.
 int main(){
 	string buf, word;
 	getline(cin, buf, '\n');

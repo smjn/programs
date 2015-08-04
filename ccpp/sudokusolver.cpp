@@ -1,5 +1,7 @@
 #include <iostream>
 #include <bits/stdc++.h>
+#include <iterator>
+#include <functional>
 
 using namespace std;
 
@@ -124,5 +126,7 @@ int main(){
 
 	printGrid();
 	if(solve())	printGrid();
+
+	return 0;
 }
 

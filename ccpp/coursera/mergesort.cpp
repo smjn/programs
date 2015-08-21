@@ -19,7 +19,8 @@ void merge(vector<int> &arr, int p, int mid, int q){
 			i++;
 		} else {
 			int temp = arr[j];
-			for(int x=mid;x>=i;x--)	arr[x+1] = arr[x];
+			copy(arr.begin()+i, arr.begin()+mid+1, arr.begin()+i+1);
+			//for(int x=mid;x>=i;x--)	arr[x+1] = arr[x];
 			arr[i] = temp;
 			i++, j++, mid++;
 		}

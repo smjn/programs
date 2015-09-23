@@ -7,15 +7,16 @@ using namespace std;
 //permute variable length vector of vectors
 void solve( vector<vector<int>> &v, int ans[], int start, int &val){
 	if(start >= v.size()){
-		//for(int i=0;i<v.size();i++){
-		//	cout << ans[i] << " ";
-		//}
-		//cout << endl;
 		unordered_set<int> s(ans, ans+v.size());
 		if(s.size()==v.size())	val++;
 		return;
 	}
 	for(int j=0;j<v[start].size();j++){
+		//prune
+		if(find(ans, ans+start, v[start][j]) != ans+start){
+			//cout << "Prune" << endl;
+			continue;
+		}
 		ans[start]=v[start][j];
 		solve(v, ans, start+1, val);
 	}

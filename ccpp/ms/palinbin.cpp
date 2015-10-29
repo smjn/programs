@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+//pallindrom binary
+//microsoft 2014
 int main(){
 	for(int n=0;n<200;n++){
 		//cin >> n;

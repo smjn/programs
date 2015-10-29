@@ -2,6 +2,8 @@
 
 using namespace std;
 
+//kadane with no contiguous elements
+//microsoft 2014
 int main(){
 	int n;
 	vector<int> v;

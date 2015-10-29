@@ -8,11 +8,11 @@ class yodlee{
 	static int prec=500;
 
 	public static void main(String[] args) throws Exception{
+		preprocess2();
+		//System.out.println(bigs.size());
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
 
-		preprocess();
-		//System.out.println(bigs.size());
 		BigInteger b0 = BigInteger.valueOf(0L);
 		while(n!=0){
 			n--;
@@ -43,6 +43,23 @@ class yodlee{
 		}
 
 		Collections.sort(bigs);
+	}
+
+	public static void preprocess2(){
+		String s="",temp;
+		for(int i=0;i<prec;i++){
+			s+="4";
+			bigs.add(new BigInteger(s));
+			temp = s;
+			for(int j=0;j<prec-i;j++){
+				temp+="0";
+				bigs.add(new BigInteger(temp));
+			}
+		}
+
+		Collections.sort(bigs);
+
+		//for(BigInteger x:bigs)	System.out.println(x);
 	}
 
 	public static void printIt(BigInteger b){

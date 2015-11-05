@@ -18,6 +18,12 @@ struct cell{
 
 typedef vector<vector<cell>> VVC;
 
+//Check if some column is blocked and return false if
+//it is.
+//Arguments:
+//VVC &grid - reference to the table
+//Returns:
+//bool representing whether any column is blocked
 bool isReachable(VVC &grid){
 	int m=grid[0].size(), n=grid.size();
 
@@ -34,21 +40,30 @@ bool isReachable(VVC &grid){
 	return true;
 }
 
+//Recursively check each valid path in the table
+//in order to find the maximum weight path
+//Arguments: 
+//VVC &grid - reference to the table
+//int mx - stores current max path sum
+//int i,j - co-ordinates to cell under consideration
 void findMax(VVC &grid, LL mx, int i, int j){
-	if(i>=grid.size() || j>=grid[0].size())
+	int m=grid.size();
+	int n=grid[0].size();
+
+	if(i<0 || j<0 || i>=m || j>=n)
 		return;
 	if(grid[i][j].state!=VALID){	//visited or blocked
 		return;
 	}
 
-	if(j==grid[0].size()-1){
+	if(j==n-1){
 		gmax=max(gmax, mx+grid[i][j].val);
 		grid[i][j].state=VISITED;
 		findMax(grid, mx+grid[i][j].val, i-1,j);
 		findMax(grid, mx+grid[i][j].val, i+1,j);
 		if(i==0){	//teleport
-			findMax(grid, 0, grid.size()-1, j);
-		}else if(i==grid.size()-1){
+			findMax(grid, 0, m-1, j);
+		}else if(i==m-1){
 			findMax(grid, 0, 0, j);
 		}
 		grid[i][j].state=VALID;
@@ -58,8 +73,8 @@ void findMax(VVC &grid, LL mx, int i, int j){
 		findMax(grid, mx+grid[i][j].val, i-1, j);
 		findMax(grid, mx+grid[i][j].val, i, j+1);
 		if(i==0){	//teleport
-			findMax(grid, 0, grid.size()-1, j);
-		}else if(i==grid.size()-1){
+			findMax(grid, 0, m-1, j);
+		}else if(i==m-1){
 			findMax(grid, 0, 0, j);
 		}
 		grid[i][j].state=VALID;

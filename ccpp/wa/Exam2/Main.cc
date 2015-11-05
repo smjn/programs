@@ -8,6 +8,10 @@ typedef unordered_set<int> usi_t;
 //globals
 int arr[100001];
 
+//Function to create graph from input edges
+//Arguments:
+//graph_t &graph - reference to map of vectors holding adjacency list
+//int n - number of edges
 void constructGraph(graph_t &graph, int n){
 	while(n--){
 		int a,b;
@@ -29,10 +33,19 @@ void constructGraph(graph_t &graph, int n){
 	}
 }
 
+//Reset all distances to INF
+//Arguments: None
+//Returns: None
 void resetDistances(){
 	for(register int i=0;i<100001; i++)	arr[i] = INT_MAX;
 }
 
+//Performs bfs traversal of a graph and computes distances
+//Arguments:
+//graph_t &graph - graph of city
+//usi_t &fCities - stores the festive cities
+//int v - vertex to get distance from
+//Returns: None
 int bfs(graph_t &graph, usi_t &fCities, int v){
 	queue<int> q;
 	q.push(v);	
@@ -54,6 +67,12 @@ int bfs(graph_t &graph, usi_t &fCities, int v){
 	return -1;	//should never happen
 }
 
+//Handle queries of both types here
+//Arguments:
+//graph_t &graph - reference to the graph_t
+//usi_t &fCities - reference to festive cities set
+//int m - number of queries
+//Returns: None
 void handleQueries(graph_t &graph, usi_t &fCities, int m){
 	int q,c;
 	while(m--){				

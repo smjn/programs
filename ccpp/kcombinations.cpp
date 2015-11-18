@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//for vectot need to pass index also
 void kCombination(string soFar, string rest, int k){
 	if(!k)
 		cout << soFar << endl;

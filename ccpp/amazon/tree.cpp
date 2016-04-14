@@ -88,7 +88,7 @@ void tree::printInOrder(tnode *from){
 	printInOrder(from->right);
 }
 
-void tree::isBST(tnode *root, int p, bool &ans){
+void tree::isBST(tnode *root, int &p, bool &ans){
 	if(!ans)	return;
 	if(root==nullptr)	return;
 	isBST(root->left, p, ans);

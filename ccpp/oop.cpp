@@ -20,12 +20,22 @@ namespace {
 				cout << this->x << endl;
 			}
 	};
+
+	struct node{
+		int data;
+	};
 };
 
 int main(){
-	onearg obj,obj2;
+	/*onearg obj,obj2;
 	obj2.print();
 	obj2=5;
-	obj2.print();
+	obj2.print();*/
+
+	node *n = (node *)malloc(sizeof(node));
+	cout << sizeof(*n) << endl;
+	free(n);
+	cout << sizeof(*n) << endl;
+	free(n);
 	return 0;
 }

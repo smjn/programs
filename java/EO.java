@@ -7,7 +7,7 @@ class Counter{
 
 	void even(){
 		synchronized(lock){
-			System.out.println(c);
+			System.out.println("Even:"+c);
 			c++;
 			try{
 				lock.notify();
@@ -20,7 +20,7 @@ class Counter{
 
 	void odd(){
 		synchronized(lock){
-			System.out.println(c);
+			System.out.println("Odd:"+c);
 			c++;
 			try{
 				lock.notify();

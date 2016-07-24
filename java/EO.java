@@ -40,7 +40,8 @@ class Even implements Runnable{
 	}
 
 	public void run(){
-		while(true){
+		int i=0;
+		while(i++ < 10){
 			cnt.even();
 		}
 	}
@@ -53,7 +54,8 @@ class Odd implements Runnable{
 	}
 
 	public void run(){
-		while(true){
+		int i=0;
+		while(i++ < 10){
 			cnt.odd();
 		}
 	}
@@ -62,7 +64,7 @@ class Odd implements Runnable{
 public class EO{
 	public static void main(String[] args){
 		Counter c = new Counter(1);
-		new Thread(new Odd(c)).start();
 		new Thread(new Even(c)).start();
+		new Thread(new Odd(c)).start();
 	}
 }

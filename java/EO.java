@@ -1,69 +1,81 @@
 class Counter{
-	volatile int c;
-	private static Integer lock = new Integer(0);
-	Counter(int c){
-		this.c = c;
+	private int c;
+	private boolean oddChance;
+	Counter(){
+		c = 0;
+		oddChance = false;
 	}
 
-	void even(){
-		synchronized(lock){
-			System.out.println("Even:"+c);
-			c++;
-			try{
-				lock.notify();
-				lock.wait();
-			}
-			catch(InterruptedException ie){
-			}
+	synchronized void waitForOdd(){
+		try{
+			while(oddChance)
+				wait();
+		}
+		catch(InterruptedException ie){
+			ie.printStackTrace();
 		}
 	}
 
-	void odd(){
-		synchronized(lock){
-			System.out.println("Odd:"+c);
-			c++;
-			try{
-				lock.notify();
-				lock.wait();
-			}
-			catch(InterruptedException ie){
-			}
+	synchronized void waitForEven(){
+		try{
+			while(!oddChance)
+				wait();
 		}
+		catch(InterruptedException ie){
+			ie.printStackTrace();
+		}
+	}
+
+	synchronized void printOdd(){
+		System.out.println("[Odd]:"+c++);
+		oddChance = false;	//ready for Even
+		notifyAll();
+	}
+
+	synchronized void printEven(){
+		System.out.println("[Even]:"+c++);
+		oddChance = true;	//ready for odd
+		notifyAll();
 	}
 }
 
 class Even implements Runnable{
+	boolean isDone;
 	Counter cnt;
 
 	Even(Counter c){
 		cnt = c;
+		isDone = false;
 	}
 
 	public void run(){
-		int i=0;
-		while(i++ < 10){
-			cnt.even();
+		while(!isDone){
+			cnt.printEven();
+			cnt.waitForOdd();
 		}
 	}
 }
 
 class Odd implements Runnable{
+	boolean isDone;
 	Counter cnt;
+
 	Odd(Counter c){
 		cnt = c;
+		isDone = false;
 	}
 
 	public void run(){
-		int i=0;
-		while(i++ < 10){
-			cnt.odd();
+		while(!isDone){
+			cnt.waitForEven();
+			cnt.printOdd();
 		}
 	}
 }
 
 public class EO{
 	public static void main(String[] args){
-		Counter c = new Counter(1);
+		Counter c = new Counter();
 		new Thread(new Even(c)).start();
 		new Thread(new Odd(c)).start();
 	}

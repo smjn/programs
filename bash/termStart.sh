@@ -8,4 +8,6 @@ if [[ $? -eq 0 ]]; then
 	else 
 		terminator -b --layout=dropdown --profile=solar &
 	fi
+else
+	terminator -b --layout=dropdown --profile=solar &
 fi

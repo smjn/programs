@@ -5,6 +5,6 @@
 #xinput --set-prop $mid "Device Accel Constant Deceleration" 2.7
 #xinput --set-prop $mid2 "Device Accel Constant Deceleration" 2.7
 xmodmap /home/sushant/.Xmodmap
-notify-send "Stuff is set"
+notify-send --hint=int:transient:1 "Stuff is set"
 
 

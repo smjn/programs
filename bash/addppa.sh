@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#add-apt-repository was not working in debian testing so created a small script to add it. This requires sudo priviledge. The actual proplem is
+#add-apt-repository was not working in debian testing so created a small script to add ppas. This requires sudo privilege. The actual proplem is
 #using the command add-key adv... it is not able to access keyserver.ubuntu.com
 
 [[ $# -ne 2 ]] && { echo "usage: $0 ppa:username/project ubuntu-dist"; exit 1; };

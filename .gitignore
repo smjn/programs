@@ -3,4 +3,5 @@ a.out
 *.O
 *.class
 *.exe
-
+./gocode/bin
+./gocode/pkg

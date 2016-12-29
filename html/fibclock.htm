@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+	<title>Fibonacci clock</title>
+	<script type="text/javascript">
+		var correct = "";
+		let numMap = {0:1,1:1,2:2,3:3,4:5};
+		
+		function isValid(timeStr,h,m){
+			let h1=0,m1=0;
+			for(var i=0;i<timeStr.length;i++){
+				if(timeStr[i]==="r" || timeStr[i]==="b")	h1+=numMap[i];
+				if(timeStr[i]==="g" || timeStr[i]==="b")	m1+=numMap[i];
+			}
+			if(h1===h && m1===m){
+				correct = timeStr;
+				return true;
+			}
+			return false;
+		}
+
+		function genColor(timeStr,h,m){
+			if(timeStr.length == 5)	return isValid(timeStr,h,m);
+			else	return genColor(timeStr+"r",h,m) || genColor(timeStr+"g",h,m) || genColor(timeStr+"b",h,m) || genColor(timeStr+"w",h,m);
+		}
+		
+		function start(h,m){
+			genColor("",h,m);
+		}
+	</script>
+
+	<style>
+		body{
+			margin:0 auto;
+		}
+		div{
+			border: 2px solid black;
+		}
+		#d0{
+			background-color:white;
+			width:100px;
+			height:100px;
+			top:0px;
+			left:202px;
+			position:absolute;
+		}
+		#d1{
+			background-color:white;
+			width:100px;
+			height:100px;
+			top:100px;
+			left:202px;
+			position:absolute;
+		}
+		#d2{
+			background-color:white;
+			width:200px;
+			height:200px;
+		}
+		#d3{
+			background-color:white;
+			width:302px;
+			height:302px;
+			top:202px;
+			position:absolute;
+		}
+		#d4{
+			background-color:white;
+			width:500px;
+			height:504px;
+			left:304px;
+			top:0px;
+			position:absolute;
+		}
+		#timeSpan{
+			position:absolute;
+			top:510px;
+			background-color:black;
+			color:#bfff00;
+			padding:0 20px
+		}
+	</style>
+</head>
+<body>
+	<div id="d0"></div>
+	<div id="d1"></div>
+	<div id="d2"></div>
+	<div id="d3"></div>
+	<div id="d4"></div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<span id="timeSpan">sadsad</span>
+	<script type="text/javascript">
+		let colorMap={"r":"red","g":"green","b":"blue","w":"white"};
+		function doIt(){
+			let d = new Date();
+			h=d.getHours()>12?d.getHours()-12:d.getHours();
+			m=parseInt(d.getMinutes()/5);
+			start(h,m);
+			for(let i=0;i<correct.length;i++){
+				document.getElementById("d"+i).style.backgroundColor=colorMap[correct[i]];
+			}
+			document.getElementById("timeSpan").innerHTML="<h1>"+h+":"+m*5+"</h1>";
+		}
+		doIt();
+		let interval = setInterval(doIt,60*1000);
+	</script>
+</body>
+</html>
+
+

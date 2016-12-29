@@ -31,6 +31,8 @@
 	<style>
 		body{
 			margin:0 auto;
+			background-color:black;
+			font-family:Helvetica;
 		}
 		div{
 			border: 2px solid black;
@@ -99,13 +101,14 @@
 		let colorMap={"r":"red","g":"#bfff00","b":"cyan","w":"white"};
 		function doIt(){
 			let d = new Date();
-			h=d.getHours()>12?d.getHours()-12:d.getHours();
-			m=parseInt(d.getMinutes()/5);
+			h=d.getHours(), m=d.getMinutes();
+			document.getElementById("timeSpan").innerHTML="<h1>"+h+":"+m+"</h1>green - minute, blue - common, red- hours";
+			h=h>12?h-12:(h===0?h=12:h);
+			m=parseInt((m===0)?12:m/5);
 			start(h,m);
 			for(let i=0;i<correct.length;i++){
 				document.getElementById("d"+i).style.backgroundColor=colorMap[correct[i]];
 			}
-			document.getElementById("timeSpan").innerHTML="<h1>"+h+":"+m*5+"</h1>green - minute, blue - common, red- hours";
 		}
 		doIt();
 		let interval = setInterval(doIt,60*1000);

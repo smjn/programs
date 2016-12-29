@@ -34,6 +34,9 @@
 		}
 		div{
 			border: 2px solid black;
+			color:black;
+			font-size:5em;
+			text-align:center;
 		}
 		#d0{
 			background-color:white;
@@ -42,6 +45,7 @@
 			top:0px;
 			left:202px;
 			position:absolute;
+			line-height:100px;
 		}
 		#d1{
 			background-color:white;
@@ -50,11 +54,13 @@
 			top:100px;
 			left:202px;
 			position:absolute;
+			line-height:100px;
 		}
 		#d2{
 			background-color:white;
 			width:200px;
 			height:200px;
+			line-height:200px;
 		}
 		#d3{
 			background-color:white;
@@ -62,6 +68,7 @@
 			height:302px;
 			top:202px;
 			position:absolute;
+			line-height:300px;
 		}
 		#d4{
 			background-color:white;
@@ -70,29 +77,26 @@
 			left:304px;
 			top:0px;
 			position:absolute;
+			line-height:500px;
 		}
 		#timeSpan{
 			position:absolute;
 			top:510px;
 			background-color:black;
 			color:#bfff00;
-			padding:0 20px
+			padding:10px 20px
 		}
 	</style>
 </head>
 <body>
-	<div id="d0"></div>
-	<div id="d1"></div>
-	<div id="d2"></div>
-	<div id="d3"></div>
-	<div id="d4"></div>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
+	<div id="d0">1</div>
+	<div id="d1">1</div>
+	<div id="d2">2</div>
+	<div id="d3">3</div>
+	<div id="d4">5</div>
 	<span id="timeSpan">sadsad</span>
 	<script type="text/javascript">
-		let colorMap={"r":"red","g":"green","b":"blue","w":"white"};
+		let colorMap={"r":"red","g":"#bfff00","b":"cyan","w":"white"};
 		function doIt(){
 			let d = new Date();
 			h=d.getHours()>12?d.getHours()-12:d.getHours();
@@ -101,7 +105,7 @@
 			for(let i=0;i<correct.length;i++){
 				document.getElementById("d"+i).style.backgroundColor=colorMap[correct[i]];
 			}
-			document.getElementById("timeSpan").innerHTML="<h1>"+h+":"+m*5+"</h1>";
+			document.getElementById("timeSpan").innerHTML="<h1>"+h+":"+m*5+"</h1>green - minute, blue - common, red- hours";
 		}
 		doIt();
 		let interval = setInterval(doIt,60*1000);

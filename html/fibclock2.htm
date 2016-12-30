@@ -86,8 +86,8 @@
 			let d = new Date();
 			h=d.getHours(), m=d.getMinutes();
 			document.getElementById("timeSpan").innerHTML="<h1>"+h+":"+m+"</h1>green - minute, blue - common, red- hours";
-			h=h>12?h-12:(h===0?h=12:h);
-			m=parseInt((m===0)?12:m/5);
+			h=h>12?h-12:(h===0?12:h);
+			m=(m===0)?12:parseInt(m/5);
 			let common=start(h,m);
 			//alert(" "+h+" "+m+" "+par[h]+" "+par[m]+" "+common);
 			for(let x=4,z=0;x>=0;x--,z++){

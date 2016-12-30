@@ -12,7 +12,7 @@
 				if(timeStr[i]==="g" || timeStr[i]==="b")	m1+=numMap[i];
 			}
 			if(h1===h && m1===m){
-				correct = timeStr;
+				correct=timeStr;
 				return true;
 			}
 			return false;
@@ -20,7 +20,7 @@
 
 		function genColor(timeStr,h,m){
 			if(timeStr.length == 5)	return isValid(timeStr,h,m);
-			else	return genColor(timeStr+"r",h,m) || genColor(timeStr+"g",h,m) || genColor(timeStr+"b",h,m) || genColor(timeStr+"w",h,m);
+			else return genColor(timeStr+"r",h,m) || genColor(timeStr+"g",h,m) || genColor(timeStr+"b",h,m) || genColor(timeStr+"w",h,m);
 		}
 		
 		function start(h,m){
@@ -102,9 +102,9 @@
 		function doIt(){
 			let d = new Date();
 			h=d.getHours(), m=d.getMinutes();
-			document.getElementById("timeSpan").innerHTML="<h1>"+h+":"+m+"</h1>green - minute, blue - common, red- hours";
-			h=h>12?h-12:(h===0?h=12:h);
-			m=parseInt((m===0)?12:m/5);
+			document.getElementById("timeSpan").innerHTML="<h1>"+h+":"+m+"</h1>green - minute, blue - common, red - hours";
+			h=h>12?h-12:(h===0?12:h);
+			m=(m===0)?12:parseInt(m/5);
 			start(h,m);
 			for(let i=0;i<correct.length;i++){
 				document.getElementById("d"+i).style.backgroundColor=colorMap[correct[i]];

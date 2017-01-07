@@ -21,7 +21,7 @@ function showInfo {
 
 per=0
 ret=0
-acpi|grep Charging
+acpi|grep Disharging
 if [[ $? -eq 0 ]]; then
 	per=`acpi|grep -iEo '[0-9]+%'|grep -iEo '[0-9][0-9]'`
 	if [[ $per -lt 10 ]]; then

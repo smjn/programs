@@ -1,6 +1,5 @@
 #!/bin/bash
 function showQues {
-	xev 2>/dev/null
 	#in gui
 	if [[ "$TERM" = "linux" ]]; then
 		dialog --yesno "$1" 10 50

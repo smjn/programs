@@ -19,14 +19,14 @@ function showInfo {
 	ret=$?
 }
 
-acpi|grep Charging
 per=0
 ret=0
+acpi|grep Charging
 if [[ $? -eq 0 ]]; then
 	per=`acpi|grep -iEo '[0-9][0-9]%'|grep -iEo '[0-9][0-9]'`
 	if [[ $per -lt 10 ]]; then
 		showQues "Battery Low - $per, do something!!"
-		[[ $ret -eq 0 ]] && { showInfo "suspending!"; systemctl suspend; };
+		[[ $ret -eq 0 ]] && { showInfo "suspending!"; sudo systemctl suspend; };
 	fi
 fi
 

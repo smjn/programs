@@ -6,4 +6,5 @@ int main(){
     char b = 'a';
     p = (char *)(&a);
     printf("%x\n",&a);
+	return 0;
 }

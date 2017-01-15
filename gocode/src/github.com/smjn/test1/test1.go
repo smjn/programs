@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/smjn/test1/test2"
+	"os"
 )
 
 func main() {
 	fmt.Println("hello world!")
-	obj := test2.Api{}
-	obj.AccessToken
-	obj.Key
-	obj.Username
+	for x, _ := range []string{"a", "b"} {
+		fmt.Println(x)
+	}
+	os.Exit()
 }

@@ -5,3 +5,5 @@ a.out
 *.exe
 ./gocode/bin/*
 ./gocode/pkg/*
+*~
+\#*\#

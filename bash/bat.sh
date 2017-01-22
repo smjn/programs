@@ -4,7 +4,7 @@ function showQues {
 	if [[ "$TERM" = "linux" ]]; then
 		dialog --yesno "$1" 10 50
 	else
-		zenity --question --text "$1" --display=:0.0
+		zenity --question --text "$1" --display=:0.0 >/dev/null 2>&1
 	fi
 	ret=$?
 }
@@ -14,7 +14,7 @@ function showInfo {
 	if [[ "$TERM" = "linux" ]]; then
 		dialog --infobox "$1" 10 50
 	else
-		zenity --info --text "$1" --display=:0.0
+		zenity --info --text "$1" --display=:0.0 >/dev/null 2>&1
 	fi
 	ret=$?
 }

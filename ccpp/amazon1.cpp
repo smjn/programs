@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int iteration(vector<int> array, int n){
+nt iteration(vector<int> array, int n){
 	int iter = array.size();
 	int t_ele = array[0];
 	array.erase(array.begin());

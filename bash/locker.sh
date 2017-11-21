@@ -6,5 +6,5 @@ revert() {
 }
 trap revert SIGHUP SIGINT SIGTERM
 xset +dpms dpms 5 5 5
-i3lock -n -f -i $2
+i3lock -n -i $2
 revert

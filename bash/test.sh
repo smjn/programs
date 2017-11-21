@@ -9,3 +9,6 @@ function test(){
 }
 
 test "hello" "world"
+
+XVAR1="sushant mahajan"
+declare -x XVAR1

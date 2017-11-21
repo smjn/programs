@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Web ssh</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.slim.js"></script>
+		<link rel="stylesheet" href="css/main.css">
+		<script src="scripts/main.js"></script>
+	</head>
+
+	<body>
+		<div class="container container-fluid">
+			<div style="background-color:black;border:2px solid #32cd32;" class="panel panel-success">
+				<div class="panel-heading">
+					<h2>VMaaS Web SSH Terminal</h2>
+				</div>
+				<div class="panel-body">
+					<div id="terminal"></div>
+				</div>
+				<div style="background-color:black;" class="panel-footer">
+					<div class="row">
+						<div id="prompt" class="col-lg-1">&gt;</div><div id="command" class="col-lg-11" contenteditable="true"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

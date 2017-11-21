@@ -1,0 +1,38 @@
+body {
+	margin: 0 auto;
+	background-color:black;
+	text-align: center;
+	color: green;
+}
+
+#terminal {
+	background-color:black;
+	color:#32cd32;
+	text-align:left;
+	font-family:monospace, "courier new";
+	overflow-y:scroll;
+	min-height:80vh;
+	max-height:80vh;
+	display:none;
+	font-size:14px;
+}
+
+.coninp {
+	border: 1px solid green;
+	border-top:0px;
+	background-color:black;
+}
+
+#prompt {
+	font-weight: bold;
+	background-color:black;
+}
+
+#command {
+	border:1px solid green;
+	border-top:0px;
+	font-family:monospace;
+	color:white; 
+	background-color:black;
+	text-align: left;
+}

@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <vector>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ enum E{
 };
 
 int main(){
+	std::vector<int> v;
 	cout << a << " "<< b << " "<< c << " "<< d << " "<< e;
 	return 0;
 }

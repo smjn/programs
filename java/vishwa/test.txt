@@ -1,0 +1,11 @@
+HelloWorld1
+Getting apps in org SAP_Virtual_Machines / space virtual_machines as admin...
+OK
+
+name                        requested state   instances   memory   disk   urls
+virtual-machines-database   stopped           0/1         1G       1G
+virtual-machines-broker     started           1/1         512M     1G     virtual-machines-broker.cfapps.cpblr.sc6.dev.sapcloud.io
+vmaas-app                   started           1/1         1G       1G     vmaas-app.cfapps.cpblr.sc6.dev.sapcloud.io
+chisel                      started           1/1         64M      1G     chisel-i332859.cfapps.cpblr.sc6.dev.sapcloud.io
+my-chisel-app               started           1/1         64M      1G     my-chisel-app.cfapps.cpblr.sc6.dev.sapcloud.io
+ssh-proxy-server            started           2/2         256M     1G     ssh-proxy-server.cfapps.cpblr.sc6.dev.sapcloud.io

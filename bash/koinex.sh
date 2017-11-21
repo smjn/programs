@@ -6,7 +6,7 @@ declare -a oldInfo
 while [[ true ]]; do 
 	price=$(curl -s -o - https://koinex.in/api/ticker)
 	len=${#coins[@]}
-	printf "\e[34mCurrent\t\tTraded\t\tMin\t\tMax\e[39m\n"
+	printf "\e[34mCurrent\t\tDelta\t\tMin\t\tMax\e[39m\n"
 	[[ -e ".prices" ]] && isFile=true || isFile=false
 
 
@@ -29,11 +29,12 @@ while [[ true ]]; do
 		((index=i*4))
 		reset="\e[39m"
 		escape=''
+		delta=0.0
 		if [[ $isFile = true ]]; then
 			a=${curInfo[0]}
 			b=${oldInfo[$index]}
 			arrow=''
-			comp=
+			delta=$(echo $a - $b|bc)
 			if [[ $(echo "$a == $b"|bc) -eq 1 ]]; then
 				escape="\e[33m"
 				arrow='•'
@@ -49,7 +50,7 @@ while [[ true ]]; do
 		if [[ $i -lt $len ]]; then
 			echo "${curInfo[@]}"|tr ' ' '\n' >> ".prices"
 		fi
-		printf "${coins[$i]}:$escape%-10s$arrow$reset\t%-10s\t%-10s\t%-10s\n" "${curInfo[0]}" "${curInfo[1]}" "${curInfo[2]}" "${curInfo[3]}"
+		printf "${coins[$i]}:$escape%-10s$arrow\t%-10s$reset\t%-10s\t%-10s\n" "${curInfo[0]}" "$delta" "${curInfo[2]}" "${curInfo[3]}"
 	done
 
 	sleep 16

@@ -2,18 +2,45 @@
 declare -a coins
 coins=(BTC ETH BCH XRP LTC)
 declare -a curInfo
-while [[ true ]]; do 
-	price=$(curl -s -o - https://koinex.in/api/ticker)
-	len=${#coins[@]}
-	
-	for (( i=0; $i<$len; i++ )); do
-		curInfo[0]=$(echo $price|jq .prices.${coins[$i]}|tr -d '"\n\r')
+declare -a oldInfo
+price=$(curl -s -o - https://koinex.in/api/ticker)
+len=${#coins[@]}
+bashcol=$1
+[[ -e ".prices2" ]] && isFile=true || isFile=false
 
-		reset="\e[39m"
-		escape=''
-		printf "${coins[$i]}:$escape%-10s$arrow$reset" "${curInfo[0]}"
-	done
+if [[ $isFile = true ]]; then
+	i=0
+	while read line; do
+		oldInfo[$i]=$line
+		((i++))
+	done <".prices2"
+fi
 
-	sleep 16
-	clear
+rm -f ".prices2"
+
+for (( i=0; $i<$len; i++ )); do
+	curInfo[0]=$(echo $price|jq .prices.${coins[$i]}|tr -d '"\n\r')
+	[[ -n $bashcol ]] && reset="\e[39m" || reset=''
+	escape=''
+	if [[ $isFile = true ]]; then
+		a=${curInfo[0]}
+		b=${oldInfo[$i]}
+		arrow=''
+
+		if [[ $(echo "$a == $b"|bc) -eq 1 ]]; then
+			[[ -n $bashcol ]] && escape="\e[33m" || escape=''
+			arrow='•'
+		elif [[ $(echo "$a < $b"|bc) -eq 1 ]]; then
+			[[ -n $bashcol ]] && escape="\e[31m" || escape=''
+			arrow='↓'
+		else
+			[[ -n $bashcol ]] && escape="\e[32m" || escape=''
+			arrow='↑'
+		fi
+	fi
+
+	if [[ $i -lt $len ]]; then
+		echo "${curInfo[@]}"|tr ' ' '\n' >> ".prices2"
+	fi
+	printf "${coins[$i]}:$escape$arrow%-10s$reset" "${curInfo[0]}"
 done

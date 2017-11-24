@@ -4,6 +4,7 @@ coins=(BTC ETH BCH XRP LTC)
 declare -a curInfo
 declare -a oldInfo
 price=$(curl -s -o - https://koinex.in/api/ticker)
+[[ $? -ne 0 ]] && { echo "koinex refusing, lets wait"; sleep 20; }
 len=${#coins[@]}
 bashcol=$1
 [[ -e ".prices2" ]] && isFile=true || isFile=false

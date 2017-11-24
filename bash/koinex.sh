@@ -5,6 +5,7 @@ declare -a curInfo
 declare -a oldInfo
 while [[ true ]]; do 
 	price=$(curl -s -o - https://koinex.in/api/ticker)
+	[[ $? -ne 0 ]] && { echo "koinex refusing, lets wait"; sleep 20; }
 	len=${#coins[@]}
 	printf "\e[34mCurrent\t\tDelta\t\tMin\t\tMax\e[39m\n"
 	[[ -e ".prices" ]] && isFile=true || isFile=false

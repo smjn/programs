@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 declare -a coins
-coins=(BTC ETH BCH XRP LTC)
+coins=(BTC ETH BCH XRP LTC REQ OMG BAT ZRX)
 declare -a curInfo
 declare -a oldInfo
 while [[ true ]]; do 

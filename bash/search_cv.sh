@@ -7,17 +7,13 @@ src=''
 dst=''
 keyw=''
 checkPreReq() {
-    which pdftotext >/dev/null 2>&1|| { echo "for mac use: brew install psdtotext, for linux apt install poppler-utils; pdftotext not present"; exit 1; }
+    which pdftotext >/dev/null 2>&1|| { echo "use: brew install psdtotext; pdftotext not present"; exit 1; }
     which grep >/dev/null 2>&1 || { echo "grep not present"; exit 1; }
     which find >/dev/null 2>&1 || { echo "find not present"; exit 1; }
 }
 
 usage() {
     echo "$0 [-i -s -d]|[-k -d]"
-    echo "to initialize"
-    echo './search_cv.sh -i -s <src resume dir> -d <dest res dir>'
-    echo "to search"
-    echo './search_cv.sh -d <dest res dir> -k <keyword1,keyword2,...>'
     exit 2
 }
 
@@ -34,7 +30,8 @@ initialize() {
 
     find "$src" -iname "*.pdf" >/tmp/names3.txt
     while read line; do
-        pdftotext $line $dst/$(basename $line).txt
+        fname=$(echo $(basename "$line")|tr ' ' '_')
+        pdftotext "$line" "$dst/$fname".txt
     done </tmp/names3.txt
 }
 
@@ -66,6 +63,7 @@ finder() {
             grep -irl "$k" "$dst" >/tmp/names1.dat
         fi
         cat /tmp/names1.dat|xargs grep -il "$k" >/tmp/names2.dat
+        exit 0
         mv /tmp/names{2.dat,1.dat}
     done
     cat /tmp/names1.dat|sort|uniq

@@ -63,7 +63,6 @@ finder() {
             grep -irl "$k" "$dst" >/tmp/names1.dat
         fi
         cat /tmp/names1.dat|xargs grep -il "$k" >/tmp/names2.dat
-        exit 0
         mv /tmp/names{2.dat,1.dat}
     done
     cat /tmp/names1.dat|sort|uniq

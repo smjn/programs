@@ -9,14 +9,20 @@
 #arg !0 - decrese brightness by 400
 
 pref="/sys/class/backlight/intel_backlight"
-old=$(cat $pref/brightness)
+conf="$HOME/.config/bright"
+[[ -e "$conf" ]] && old=$(cat "$conf") || old=$(cat $pref/brightness)
 mx=$(cat $pref/max_brightness)
 (( new=$old+400 ))
 if [[ $# -eq 1 ]]; then
-    new=$(( $1==0?800:$old - 400 ))
+    if [[ $1 -eq 0 ]]; then
+        #stay the same
+        new=$old
+    elif [[ $1 -eq 1 ]]; then
+        (( new=$old-400 ))
+    fi
 fi
-echo $1 $new
-new=$(( $new>$mx?$mx:($new<0?400:$new) ))
-echo $new|sudo /usr/bin/tee /sys/class/backlight/intel_backlight/brightness
+new=$(( $new>$mx?$mx:($new<=0?400:$new) ))
+echo -n $new > "$conf"
+echo $new|sudo /usr/bin/tee "$pref/brightness"
 
 
